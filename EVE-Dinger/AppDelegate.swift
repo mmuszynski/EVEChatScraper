@@ -9,15 +9,17 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate {
 
     @IBOutlet weak var window: NSWindow!
     var fullContents = ""
     var currentLogFiles = [String: NSURL]()
+    var logFiles = [LogFile]()
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         loadFiles()
+        reloadLogObjects()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -26,6 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationSupportDirectory() -> NSURL? {
         return NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: false, error: nil)
+    }
+    
+    func reloadLogObjects() {
+        for log in logFiles {
+            log.reloadData()
+        }
     }
     
     func loadFiles() {
@@ -80,15 +88,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                 }
                 
-                println(currentLogFiles)
+                for (name, url) in currentLogFiles {
+                    let file = LogFile(url: url, logName: name)
+                    logFiles.append(file)
+                    file.reloadData()
+                }
                 
             }
-            
-
-            
 
         }
     }
+    
 
 }
 
