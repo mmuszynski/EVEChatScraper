@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD621A85C5F30058BA3C /* AppDelegate.swift */; };
+		2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD641A85C5F30058BA3C /* Images.xcassets */; };
+		2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD661A85C5F30058BA3C /* MainMenu.xib */; };
+		2794BD741A85C5F30058BA3C /* EVE_DingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2794BD6E1A85C5F30058BA3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2794BD551A85C5F30058BA3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2794BD5C1A85C5F30058BA3C;
+			remoteInfo = "EVE-Dinger";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2794BD5D1A85C5F30058BA3C /* EVE-Dinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EVE-Dinger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2794BD611A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2794BD621A85C5F30058BA3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2794BD641A85C5F30058BA3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2794BD671A85C5F30058BA3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2794BD6D1A85C5F30058BA3C /* EVE-DingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EVE-DingerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2794BD721A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVE_DingerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2794BD5A1A85C5F30058BA3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2794BD6A1A85C5F30058BA3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2794BD541A85C5F30058BA3C = {
+			isa = PBXGroup;
+			children = (
+				2794BD5F1A85C5F30058BA3C /* EVE-Dinger */,
+				2794BD701A85C5F30058BA3C /* EVE-DingerTests */,
+				2794BD5E1A85C5F30058BA3C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2794BD5E1A85C5F30058BA3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2794BD5D1A85C5F30058BA3C /* EVE-Dinger.app */,
+				2794BD6D1A85C5F30058BA3C /* EVE-DingerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2794BD5F1A85C5F30058BA3C /* EVE-Dinger */ = {
+			isa = PBXGroup;
+			children = (
+				2794BD621A85C5F30058BA3C /* AppDelegate.swift */,
+				2794BD641A85C5F30058BA3C /* Images.xcassets */,
+				2794BD661A85C5F30058BA3C /* MainMenu.xib */,
+				2794BD601A85C5F30058BA3C /* Supporting Files */,
+			);
+			path = "EVE-Dinger";
+			sourceTree = "<group>";
+		};
+		2794BD601A85C5F30058BA3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2794BD611A85C5F30058BA3C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2794BD701A85C5F30058BA3C /* EVE-DingerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */,
+				2794BD711A85C5F30058BA3C /* Supporting Files */,
+			);
+			path = "EVE-DingerTests";
+			sourceTree = "<group>";
+		};
+		2794BD711A85C5F30058BA3C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2794BD721A85C5F30058BA3C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2794BD5C1A85C5F30058BA3C /* EVE-Dinger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-Dinger" */;
+			buildPhases = (
+				2794BD591A85C5F30058BA3C /* Sources */,
+				2794BD5A1A85C5F30058BA3C /* Frameworks */,
+				2794BD5B1A85C5F30058BA3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EVE-Dinger";
+			productName = "EVE-Dinger";
+			productReference = 2794BD5D1A85C5F30058BA3C /* EVE-Dinger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2794BD6C1A85C5F30058BA3C /* EVE-DingerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2794BD7A1A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-DingerTests" */;
+			buildPhases = (
+				2794BD691A85C5F30058BA3C /* Sources */,
+				2794BD6A1A85C5F30058BA3C /* Frameworks */,
+				2794BD6B1A85C5F30058BA3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2794BD6F1A85C5F30058BA3C /* PBXTargetDependency */,
+			);
+			name = "EVE-DingerTests";
+			productName = "EVE-DingerTests";
+			productReference = 2794BD6D1A85C5F30058BA3C /* EVE-DingerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2794BD551A85C5F30058BA3C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Mike Muszynski";
+				TargetAttributes = {
+					2794BD5C1A85C5F30058BA3C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					2794BD6C1A85C5F30058BA3C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 2794BD5C1A85C5F30058BA3C;
+					};
+				};
+			};
+			buildConfigurationList = 2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVE-Dinger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2794BD541A85C5F30058BA3C;
+			productRefGroup = 2794BD5E1A85C5F30058BA3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2794BD5C1A85C5F30058BA3C /* EVE-Dinger */,
+				2794BD6C1A85C5F30058BA3C /* EVE-DingerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2794BD5B1A85C5F30058BA3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */,
+				2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2794BD6B1A85C5F30058BA3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2794BD591A85C5F30058BA3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2794BD691A85C5F30058BA3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2794BD741A85C5F30058BA3C /* EVE_DingerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2794BD6F1A85C5F30058BA3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2794BD5C1A85C5F30058BA3C /* EVE-Dinger */;
+			targetProxy = 2794BD6E1A85C5F30058BA3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2794BD661A85C5F30058BA3C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2794BD671A85C5F30058BA3C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2794BD751A85C5F30058BA3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2794BD761A85C5F30058BA3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2794BD781A85C5F30058BA3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2794BD791A85C5F30058BA3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2794BD7B1A85C5F30058BA3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EVE-DingerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE-Dinger.app/Contents/MacOS/EVE-Dinger";
+			};
+			name = Debug;
+		};
+		2794BD7C1A85C5F30058BA3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EVE-DingerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE-Dinger.app/Contents/MacOS/EVE-Dinger";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVE-Dinger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2794BD751A85C5F30058BA3C /* Debug */,
+				2794BD761A85C5F30058BA3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-Dinger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2794BD781A85C5F30058BA3C /* Debug */,
+				2794BD791A85C5F30058BA3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2794BD7A1A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-DingerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2794BD7B1A85C5F30058BA3C /* Debug */,
+				2794BD7C1A85C5F30058BA3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2794BD551A85C5F30058BA3C /* Project object */;
+}
