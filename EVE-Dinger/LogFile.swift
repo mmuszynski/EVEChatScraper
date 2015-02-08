@@ -40,4 +40,20 @@ class LogFile: NSObject {
             }.filter { !isEmpty($0) }
         }
     }
+    
+}
+
+class LogFileCellView : NSTableCellView {
+
+    @IBOutlet weak var unreadLinesField : NSTextField!
+    var unreadLines : Int = 0 {
+        didSet {
+            if unreadLines == 0 {
+                unreadLinesField.hidden = true
+            } else {
+                unreadLinesField.stringValue = "\(unreadLines)"
+            }
+        }
+    }
+    
 }

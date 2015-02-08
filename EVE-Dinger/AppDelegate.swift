@@ -11,15 +11,21 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate {
 
+    @IBOutlet weak var outlineView: NSOutlineView!
     @IBOutlet weak var window: NSWindow!
     var fullContents = ""
     var currentLogFiles = [String: NSURL]()
-    var logFiles = [LogFile]()
+    var logFiles = [LogFile : Int]()
+    @IBOutlet var logView: NSTextView!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
         loadFiles()
         reloadLogObjects()
+        outlineView.reloadData()
+        
+        let timer = NSTimer(timeInterval: 1.0, target: self, selector: "reloadLogObjects", userInfo: nil, repeats: true)
+        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -31,8 +37,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     }
     
     func reloadLogObjects() {
-        for log in logFiles {
+        for log in logFiles.keys.array {
             log.reloadData()
+            if logFiles[log] != log.lines.count {
+                reloadOutlineViewRowForLog(log)
+            }
         }
     }
     
@@ -90,13 +99,67 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
                 
                 for (name, url) in currentLogFiles {
                     let file = LogFile(url: url, logName: name)
-                    logFiles.append(file)
+                    logFiles[file] = 0
                     file.reloadData()
                 }
                 
             }
 
         }
+    }
+    
+    func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
+        if item == nil {
+            return logFiles.count
+        }
+        
+        return 0
+    }
+    
+    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
+        return logFiles.keys.array[index]
+    }
+    
+    func outlineView(outlineView: NSOutlineView, objectValueForTableColumn tableColumn: NSTableColumn?, byItem item: AnyObject?) -> AnyObject? {
+        if let log = item as? LogFile {
+            return log
+        }
+        
+        return nil
+    }
+    
+    func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
+        if let log = item as? LogFile {
+            let cell = outlineView.makeViewWithIdentifier("DataCell", owner: self) as LogFileCellView
+            cell.textField?.stringValue = log.logName
+            if let readLines = logFiles[log] {
+                cell.unreadLines = log.lines.count - readLines
+            }
+            return cell
+        }
+        return nil
+    }
+    
+    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
+        return false
+    }
+    
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        let item = outlineView.selectedRowIndexes.firstIndex
+        let selectedItem = outlineView.itemAtRow(item) as LogFile
+        loadLogFileIntoDetailView(selectedItem)
+    }
+    
+    func loadLogFileIntoDetailView(log: LogFile) {
+        let logText = "\n".join(log.lines)
+        logView.string = logText
+        logFiles[log] = log.lines.count
+        reloadOutlineViewRowForLog(log)
+    }
+    
+    func reloadOutlineViewRowForLog(log: LogFile) {
+        let rows = NSIndexSet(index: outlineView.rowForItem(log))
+        outlineView.reloadDataForRowIndexes(rows, columnIndexes: NSIndexSet(index: 0))
     }
     
 
