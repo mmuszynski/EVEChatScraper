@@ -25,12 +25,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2794BD5D1A85C5F30058BA3C /* EVE-Dinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EVE-Dinger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVEChatScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2794BD611A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2794BD621A85C5F30058BA3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2794BD641A85C5F30058BA3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2794BD671A85C5F30058BA3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2794BD6D1A85C5F30058BA3C /* EVE-DingerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EVE-DingerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2794BD6D1A85C5F30058BA3C /* EVEChatScraperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVEChatScraperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2794BD721A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVE_DingerTests.swift; sourceTree = "<group>"; };
 		2794BD7D1A86C70E0058BA3C /* LogFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
@@ -66,8 +66,8 @@
 		2794BD5E1A85C5F30058BA3C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2794BD5D1A85C5F30058BA3C /* EVE-Dinger.app */,
-				2794BD6D1A85C5F30058BA3C /* EVE-DingerTests.xctest */,
+				2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */,
+				2794BD6D1A85C5F30058BA3C /* EVEChatScraperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,9 +112,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2794BD5C1A85C5F30058BA3C /* EVE-Dinger */ = {
+		2794BD5C1A85C5F30058BA3C /* EVEChatScraper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-Dinger" */;
+			buildConfigurationList = 2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVEChatScraper" */;
 			buildPhases = (
 				2794BD591A85C5F30058BA3C /* Sources */,
 				2794BD5A1A85C5F30058BA3C /* Frameworks */,
@@ -124,14 +124,14 @@
 			);
 			dependencies = (
 			);
-			name = "EVE-Dinger";
+			name = EVEChatScraper;
 			productName = "EVE-Dinger";
-			productReference = 2794BD5D1A85C5F30058BA3C /* EVE-Dinger.app */;
+			productReference = 2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2794BD6C1A85C5F30058BA3C /* EVE-DingerTests */ = {
+		2794BD6C1A85C5F30058BA3C /* EVEChatScraperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2794BD7A1A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-DingerTests" */;
+			buildConfigurationList = 2794BD7A1A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVEChatScraperTests" */;
 			buildPhases = (
 				2794BD691A85C5F30058BA3C /* Sources */,
 				2794BD6A1A85C5F30058BA3C /* Frameworks */,
@@ -142,9 +142,9 @@
 			dependencies = (
 				2794BD6F1A85C5F30058BA3C /* PBXTargetDependency */,
 			);
-			name = "EVE-DingerTests";
+			name = EVEChatScraperTests;
 			productName = "EVE-DingerTests";
-			productReference = 2794BD6D1A85C5F30058BA3C /* EVE-DingerTests.xctest */;
+			productReference = 2794BD6D1A85C5F30058BA3C /* EVEChatScraperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -165,7 +165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVE-Dinger" */;
+			buildConfigurationList = 2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVEChatScraper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -178,8 +178,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2794BD5C1A85C5F30058BA3C /* EVE-Dinger */,
-				2794BD6C1A85C5F30058BA3C /* EVE-DingerTests */,
+				2794BD5C1A85C5F30058BA3C /* EVEChatScraper */,
+				2794BD6C1A85C5F30058BA3C /* EVEChatScraperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -226,7 +226,7 @@
 /* Begin PBXTargetDependency section */
 		2794BD6F1A85C5F30058BA3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2794BD5C1A85C5F30058BA3C /* EVE-Dinger */;
+			target = 2794BD5C1A85C5F30058BA3C /* EVEChatScraper */;
 			targetProxy = 2794BD6E1A85C5F30058BA3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -327,7 +327,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVEChatScraper;
 			};
 			name = Debug;
 		};
@@ -338,7 +338,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVEChatScraper;
 			};
 			name = Release;
 		};
@@ -357,7 +357,7 @@
 				);
 				INFOPLIST_FILE = "EVE-DingerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVEChatScraperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE-Dinger.app/Contents/MacOS/EVE-Dinger";
 			};
 			name = Debug;
@@ -373,7 +373,7 @@
 				);
 				INFOPLIST_FILE = "EVE-DingerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVEChatScraperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE-Dinger.app/Contents/MacOS/EVE-Dinger";
 			};
 			name = Release;
@@ -381,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVE-Dinger" */ = {
+		2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVEChatScraper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2794BD751A85C5F30058BA3C /* Debug */,
@@ -390,21 +390,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-Dinger" */ = {
+		2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVEChatScraper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2794BD781A85C5F30058BA3C /* Debug */,
 				2794BD791A85C5F30058BA3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		2794BD7A1A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVE-DingerTests" */ = {
+		2794BD7A1A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVEChatScraperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2794BD7B1A85C5F30058BA3C /* Debug */,
 				2794BD7C1A85C5F30058BA3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

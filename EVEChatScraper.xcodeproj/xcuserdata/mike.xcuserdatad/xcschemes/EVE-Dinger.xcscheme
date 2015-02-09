@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2794BD5C1A85C5F30058BA3C"
-               BuildableName = "EVE-Dinger.app"
-               BlueprintName = "EVE-Dinger"
-               ReferencedContainer = "container:EVE-Dinger.xcodeproj">
+               BuildableName = "EVEChatScraper.app"
+               BlueprintName = "EVEChatScraper"
+               ReferencedContainer = "container:EVEChatScraper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2794BD6C1A85C5F30058BA3C"
-               BuildableName = "EVE-DingerTests.xctest"
-               BlueprintName = "EVE-DingerTests"
-               ReferencedContainer = "container:EVE-Dinger.xcodeproj">
+               BuildableName = "EVEChatScraperTests.xctest"
+               BlueprintName = "EVEChatScraperTests"
+               ReferencedContainer = "container:EVEChatScraper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2794BD6C1A85C5F30058BA3C"
-               BuildableName = "EVE-DingerTests.xctest"
-               BlueprintName = "EVE-DingerTests"
-               ReferencedContainer = "container:EVE-Dinger.xcodeproj">
+               BuildableName = "EVEChatScraperTests.xctest"
+               BlueprintName = "EVEChatScraperTests"
+               ReferencedContainer = "container:EVEChatScraper.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2794BD5C1A85C5F30058BA3C"
-            BuildableName = "EVE-Dinger.app"
-            BlueprintName = "EVE-Dinger"
-            ReferencedContainer = "container:EVE-Dinger.xcodeproj">
+            BuildableName = "EVEChatScraper.app"
+            BlueprintName = "EVEChatScraper"
+            ReferencedContainer = "container:EVEChatScraper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2794BD5C1A85C5F30058BA3C"
-            BuildableName = "EVE-Dinger.app"
-            BlueprintName = "EVE-Dinger"
-            ReferencedContainer = "container:EVE-Dinger.xcodeproj">
+            BuildableName = "EVEChatScraper.app"
+            BlueprintName = "EVEChatScraper"
+            ReferencedContainer = "container:EVEChatScraper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2794BD5C1A85C5F30058BA3C"
-            BuildableName = "EVE-Dinger.app"
-            BlueprintName = "EVE-Dinger"
-            ReferencedContainer = "container:EVE-Dinger.xcodeproj">
+            BuildableName = "EVEChatScraper.app"
+            BlueprintName = "EVEChatScraper"
+            ReferencedContainer = "container:EVEChatScraper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
