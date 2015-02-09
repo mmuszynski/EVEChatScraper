@@ -51,7 +51,21 @@ class LogFileCellView : NSTableCellView {
             if unreadLines == 0 {
                 unreadLinesField.hidden = true
             } else {
+                unreadLinesField.hidden = false
                 unreadLinesField.stringValue = "\(unreadLines)"
+                if oldValue != unreadLines {
+                    if let soundName = NSUserDefaults.standardUserDefaults().objectForKey("alertSound") as? String {
+                        NSSound(named: soundName)?.play()
+                    }
+                    
+                    if NSUserDefaults.standardUserDefaults().boolForKey("sendNotifications") {
+                        let notification = NSUserNotification()
+                        notification.title = "EVE Message"
+                        notification.subtitle = "Message received in \(self.textField?.stringValue) chat"
+                        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+                    }
+                    
+                }
             }
         }
     }

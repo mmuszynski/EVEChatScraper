@@ -18,8 +18,54 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     var logFiles = [LogFile : Int]()
     @IBOutlet var logView: NSTextView!
     
+    @IBOutlet weak var notificationButton: NSButton!
+    @IBOutlet weak var soundPopUpButton: NSPopUpButton!
+    func loadSoundNames() {
+        if let url = NSURL(fileURLWithPath: "/System/Library/Sounds") {
+            let soundFiles = NSFileManager.defaultManager().contentsOfDirectoryAtURL(url , includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: nil) as [NSURL]
+            var soundNames = soundFiles.map { $0.lastPathComponent! }
+            soundNames = soundNames.map { $0.stringByReplacingOccurrencesOfString(".aiff", withString: "") }
+            soundPopUpButton.removeAllItems()
+            soundPopUpButton.addItemsWithTitles(["None"] + soundNames)
+            
+            if let currentSound = NSUserDefaults.standardUserDefaults().valueForKey("alertSound") as? String {
+                soundPopUpButton.selectItemWithTitle(currentSound)
+            }
+        }
+        
+        
+    }
+    @IBAction func soundChanged(sender: AnyObject) {
+        if let name = soundPopUpButton.titleOfSelectedItem {
+            if name != "None" {
+                NSUserDefaults.standardUserDefaults().setValue(name, forKey: "alertSound")
+                NSSound(named: name)?.play()
+            } else {
+                NSUserDefaults.standardUserDefaults().removeObjectForKey("alertSound")
+            }
+        }
+    }
+    @IBAction func notificationButtonChecked(sender: AnyObject) {
+        if let button = sender as? NSButton {
+            if button.state == NSOnState {
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "sendNotifications")
+            } else {
+                NSUserDefaults.standardUserDefaults().setBool(false, forKey: "sendNotifications")
+            }
+        }
+        
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+        loadSoundNames()
+        if NSUserDefaults.standardUserDefaults().boolForKey("sendNotifications") {
+            notificationButton.state = NSOnState
+        } else {
+            notificationButton.state = NSOffState
+        }
+        
+        
         loadFiles()
         reloadLogObjects()
         outlineView.reloadData()
@@ -41,6 +87,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
             log.reloadData()
             if logFiles[log] != log.lines.count {
                 reloadOutlineViewRowForLog(log)
+            }
+        }
+        
+        if outlineView.selectedRow != -1 {
+            if let item = outlineView.itemAtRow(outlineView.selectedRow) as? LogFile {
+                if item.lines.count != logFiles[item] {
+                    loadLogFileIntoDetailView(item)
+                }
             }
         }
     }
@@ -155,6 +209,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
         logView.string = logText
         logFiles[log] = log.lines.count
         reloadOutlineViewRowForLog(log)
+        logView.scrollToEndOfDocument(self)
     }
     
     func reloadOutlineViewRowForLog(log: LogFile) {
