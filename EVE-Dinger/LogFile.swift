@@ -25,7 +25,7 @@ class LogFile: NSObject {
     func reloadData() {
         data = NSMutableData(contentsOfURL: url)
         if data != nil {
-            dataString = NSString(data: data!, encoding: NSUTF16LittleEndianStringEncoding)
+            dataString = NSString(data: data!, encoding: NSUTF16LittleEndianStringEncoding) as? String
         }
         parse()
     }

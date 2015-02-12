@@ -21,16 +21,23 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     @IBOutlet weak var notificationButton: NSButton!
     @IBOutlet weak var soundPopUpButton: NSPopUpButton!
     func loadSoundNames() {
+        var soundNames = [String]()
+        
         if let url = NSURL(fileURLWithPath: "/System/Library/Sounds") {
-            let soundFiles = NSFileManager.defaultManager().contentsOfDirectoryAtURL(url , includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: nil) as [NSURL]
-            var soundNames = soundFiles.map { $0.lastPathComponent! }
-            soundNames = soundNames.map { $0.stringByReplacingOccurrencesOfString(".aiff", withString: "") }
-            soundPopUpButton.removeAllItems()
-            soundPopUpButton.addItemsWithTitles(["None"] + soundNames)
-            
-            if let currentSound = NSUserDefaults.standardUserDefaults().valueForKey("alertSound") as? String {
-                soundPopUpButton.selectItemWithTitle(currentSound)
+            if let soundFiles = NSFileManager.defaultManager().contentsOfDirectoryAtURL(url , includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: nil) as? [NSURL] {
+                soundNames = soundFiles.map { $0.lastPathComponent! }
+                soundNames = soundNames.map { $0.stringByReplacingOccurrencesOfString(".aiff", withString: "") }
+            } else {
+                soundNames = []
             }
+
+        }
+        
+        soundPopUpButton.removeAllItems()
+        soundPopUpButton.addItemsWithTitles(["None"] + soundNames)
+        
+        if let currentSound = NSUserDefaults.standardUserDefaults().valueForKey("alertSound") as? String {
+            soundPopUpButton.selectItemWithTitle(currentSound)
         }
         
         
@@ -110,7 +117,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
 
             if let files = NSFileManager.defaultManager().contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: nil) {
                 let todaysFiles = files.filter {
-                    let url = $0 as NSURL
+                    let url = $0 as! NSURL
                     
                     if let path = url.absoluteString {
                         let pathString = NSString(string: path)
@@ -138,14 +145,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
                 
                 
                 fileProperties.sort {
-                    let date1 = $0[NSFileModificationDate] as NSDate
-                    let date2 = $1[NSFileModificationDate] as NSDate
+                    let date1 = $0[NSFileModificationDate] as! NSDate
+                    let date2 = $1[NSFileModificationDate] as! NSDate
                     return date1.earlierDate(date2) == date1
                 }
                 
                 for properties in fileProperties {
-                    let type = properties["LogType"] as String
-                    let path = properties["path"] as String
+                    let type = properties["LogType"] as! String
+                    let path = properties["path"] as! String
                     
                     currentLogFiles[type] = NSURL(fileURLWithPath: path)
                     
@@ -184,7 +191,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         if let log = item as? LogFile {
-            let cell = outlineView.makeViewWithIdentifier("DataCell", owner: self) as LogFileCellView
+            let cell = outlineView.makeViewWithIdentifier("DataCell", owner: self) as! LogFileCellView
             cell.textField?.stringValue = log.logName
             if let readLines = logFiles[log] {
                 cell.unreadLines = log.lines.count - readLines
@@ -200,7 +207,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     
     func outlineViewSelectionDidChange(notification: NSNotification) {
         let item = outlineView.selectedRowIndexes.firstIndex
-        let selectedItem = outlineView.itemAtRow(item) as LogFile
+        let selectedItem = outlineView.itemAtRow(item) as! LogFile
         loadLogFileIntoDetailView(selectedItem)
     }
     

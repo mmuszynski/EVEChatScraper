@@ -10,7 +10,6 @@
 		2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD621A85C5F30058BA3C /* AppDelegate.swift */; };
 		2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD641A85C5F30058BA3C /* Images.xcassets */; };
 		2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD661A85C5F30058BA3C /* MainMenu.xib */; };
-		2794BD741A85C5F30058BA3C /* EVE_DingerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */; };
 		2794BD7E1A86C70E0058BA3C /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD7D1A86C70E0058BA3C /* LogFile.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +30,6 @@
 		2794BD641A85C5F30058BA3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2794BD671A85C5F30058BA3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2794BD6D1A85C5F30058BA3C /* EVEChatScraperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVEChatScraperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2794BD721A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVE_DingerTests.swift; sourceTree = "<group>"; };
 		2794BD7D1A86C70E0058BA3C /* LogFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				2794BD5F1A85C5F30058BA3C /* EVE-Dinger */,
-				2794BD701A85C5F30058BA3C /* EVE-DingerTests */,
 				2794BD5E1A85C5F30058BA3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,23 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				2794BD611A85C5F30058BA3C /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2794BD701A85C5F30058BA3C /* EVE-DingerTests */ = {
-			isa = PBXGroup;
-			children = (
-				2794BD731A85C5F30058BA3C /* EVE_DingerTests.swift */,
-				2794BD711A85C5F30058BA3C /* Supporting Files */,
-			);
-			path = "EVE-DingerTests";
-			sourceTree = "<group>";
-		};
-		2794BD711A85C5F30058BA3C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2794BD721A85C5F30058BA3C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -217,7 +196,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2794BD741A85C5F30058BA3C /* EVE_DingerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -314,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -327,6 +305,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = EVEChatScraper;
 			};
 			name = Debug;
@@ -338,6 +317,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = EVEChatScraper;
 			};
 			name = Release;
@@ -357,6 +337,7 @@
 				);
 				INFOPLIST_FILE = "EVE-DingerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = EVEChatScraperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE-Dinger.app/Contents/MacOS/EVE-Dinger";
 			};
@@ -373,6 +354,7 @@
 				);
 				INFOPLIST_FILE = "EVE-DingerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = EVEChatScraperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVE-Dinger.app/Contents/MacOS/EVE-Dinger";
 			};
