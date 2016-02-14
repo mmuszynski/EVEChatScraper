@@ -23,14 +23,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     func loadSoundNames() {
         var soundNames = [String]()
         
-        if let url = NSURL(fileURLWithPath: "/System/Library/Sounds") {
-            if let soundFiles = NSFileManager.defaultManager().contentsOfDirectoryAtURL(url , includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: nil) as? [NSURL] {
-                soundNames = soundFiles.map { $0.lastPathComponent! }
-                soundNames = soundNames.map { $0.stringByReplacingOccurrencesOfString(".aiff", withString: "") }
-            } else {
-                soundNames = []
-            }
-
+        let url = NSURL(fileURLWithPath: "/System/Library/Sounds")
+        
+        if let soundFiles = (try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(url , includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles)) {
+            soundNames = soundFiles.map { $0.lastPathComponent! }
+            soundNames = soundNames.map { $0.stringByReplacingOccurrencesOfString(".aiff", withString: "") }
+        } else {
+            soundNames = []
         }
         
         soundPopUpButton.removeAllItems()
@@ -73,9 +72,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
         }
         
         
-        loadFiles()
-        reloadLogObjects()
-        outlineView.reloadData()
+//        loadFiles()
+//        reloadLogObjects()
+//        outlineView.reloadData()
         
         let timer = NSTimer(timeInterval: 1.0, target: self, selector: "reloadLogObjects", userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
@@ -86,11 +85,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     }
 
     func applicationSupportDirectory() -> NSURL? {
-        return NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: false, error: nil)
+        return try? NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: false)
     }
     
     func reloadLogObjects() {
-        for log in logFiles.keys.array {
+        for log in Array(logFiles.keys) {
             log.reloadData()
             if logFiles[log] != log.lines.count {
                 reloadOutlineViewRowForLog(log)
@@ -115,36 +114,32 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
             dateFormat.dateFormat = "YYYYMMdd"
             let todayString = dateFormat.stringFromDate(NSDate())
 
-            if let files = NSFileManager.defaultManager().contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: nil) {
+            if let files = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles) {
                 let todaysFiles = files.filter {
-                    let url = $0 as! NSURL
+                    let url = $0 
                     
-                    if let path = url.absoluteString {
-                        let pathString = NSString(string: path)
-                        return pathString.containsString(todayString)
-                    }
-                    
-                    return false
+                    let path = url.absoluteString
+                    let pathString = NSString(string: path)
+                    return pathString.containsString(todayString)
                 }
                 
                 for location in todaysFiles {
-                    if let url = location as? NSURL {
-                        if let path = url.path {
-                            if var properties = NSFileManager.defaultManager().attributesOfItemAtPath(path, error: nil) {
-                                if let filename = url.lastPathComponent {
-                                    if let logType = filename.componentsSeparatedByString("_").first {
-                                        properties["LogType"] = logType
-                                        properties["path"] = path
-                                    }
+                    let url = location
+                    if let path = url.path {
+                        if var properties = try? NSFileManager.defaultManager().attributesOfItemAtPath(path) {
+                            if let filename = url.lastPathComponent {
+                                if let logType = filename.componentsSeparatedByString("_").first {
+                                    properties["LogType"] = logType
+                                    properties["path"] = path
                                 }
-                                fileProperties.append(properties)
                             }
+                            fileProperties.append(properties)
                         }
                     }
                 }
                 
                 
-                fileProperties.sort {
+                fileProperties.sortInPlace {
                     let date1 = $0[NSFileModificationDate] as! NSDate
                     let date2 = $1[NSFileModificationDate] as! NSDate
                     return date1.earlierDate(date2) == date1
@@ -178,7 +173,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     }
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-        return logFiles.keys.array[index]
+        return Array(logFiles.keys)[index]
     }
     
     func outlineView(outlineView: NSOutlineView, objectValueForTableColumn tableColumn: NSTableColumn?, byItem item: AnyObject?) -> AnyObject? {
@@ -212,7 +207,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
     }
     
     func loadLogFileIntoDetailView(log: LogFile) {
-        let logText = "\n".join(log.lines)
+        let logText = log.lines.joinWithSeparator("\n")
         logView.string = logText
         logFiles[log] = log.lines.count
         reloadOutlineViewRowForLog(log)
@@ -224,6 +219,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSO
         outlineView.reloadDataForRowIndexes(rows, columnIndexes: NSIndexSet(index: 0))
     }
     
+    @IBAction func rescanButtonPressed(sender: AnyObject) {
+        logFiles.removeAll()
+        loadFiles()
+        reloadLogObjects()
+        outlineView.reloadData()
+    }
 
 }
 

@@ -33,11 +33,11 @@ class LogFile: NSObject {
     func parse() {
         if let newlineSeparated = dataString?.componentsSeparatedByString("\n") {
             lines = newlineSeparated.map {
-                var set = NSMutableCharacterSet.whitespaceCharacterSet()
+                let set = NSMutableCharacterSet.whitespaceCharacterSet()
                 set.addCharactersInString("\r")
-                let components = $0.componentsSeparatedByCharactersInSet(set).filter { !isEmpty($0) }
-                return join(" ", components)
-            }.filter { !isEmpty($0) }
+                let components = $0.componentsSeparatedByCharactersInSet(set).filter { !$0.characters.isEmpty }
+                return components.joinWithSeparator(" ")
+            }.filter { !$0.characters.isEmpty }
         }
     }
     
