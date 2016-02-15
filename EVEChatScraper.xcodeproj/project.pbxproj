@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270312BA1C70F28600176941 /* ParsedLogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270312B91C70F28600176941 /* ParsedLogFile.swift */; };
+		270312C21C70F2D500176941 /* EVEChatScraperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270312C11C70F2D500176941 /* EVEChatScraperTests.swift */; };
+		270312CA1C70F3C300176941 /* LogParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270312C91C70F3C300176941 /* LogParser.swift */; };
 		2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD621A85C5F30058BA3C /* AppDelegate.swift */; };
 		2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD641A85C5F30058BA3C /* Images.xcassets */; };
 		2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD661A85C5F30058BA3C /* MainMenu.xib */; };
 		2794BD7E1A86C70E0058BA3C /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD7D1A86C70E0058BA3C /* LogFile.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		270312C41C70F2D500176941 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2794BD551A85C5F30058BA3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2794BD5C1A85C5F30058BA3C;
+			remoteInfo = EVEChatScraper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		270312B91C70F28600176941 /* ParsedLogFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedLogFile.swift; sourceTree = "<group>"; };
+		270312BF1C70F2D500176941 /* EVEChatScraperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVEChatScraperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		270312C11C70F2D500176941 /* EVEChatScraperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVEChatScraperTests.swift; sourceTree = "<group>"; };
+		270312C31C70F2D500176941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270312C91C70F3C300176941 /* LogParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogParser.swift; sourceTree = "<group>"; };
 		2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVEChatScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2794BD611A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2794BD621A85C5F30058BA3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -23,6 +41,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		270312BC1C70F2D500176941 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2794BD5A1A85C5F30058BA3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,10 +58,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270312C01C70F2D500176941 /* EVEChatScraperTests */ = {
+			isa = PBXGroup;
+			children = (
+				270312C11C70F2D500176941 /* EVEChatScraperTests.swift */,
+				270312C31C70F2D500176941 /* Info.plist */,
+			);
+			path = EVEChatScraperTests;
+			sourceTree = "<group>";
+		};
 		2794BD541A85C5F30058BA3C = {
 			isa = PBXGroup;
 			children = (
 				2794BD5F1A85C5F30058BA3C /* EVE-Dinger */,
+				270312C01C70F2D500176941 /* EVEChatScraperTests */,
 				2794BD5E1A85C5F30058BA3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */,
+				270312BF1C70F2D500176941 /* EVEChatScraperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +90,8 @@
 			children = (
 				2794BD621A85C5F30058BA3C /* AppDelegate.swift */,
 				2794BD7D1A86C70E0058BA3C /* LogFile.swift */,
+				270312B91C70F28600176941 /* ParsedLogFile.swift */,
+				270312C91C70F3C300176941 /* LogParser.swift */,
 				2794BD641A85C5F30058BA3C /* Images.xcassets */,
 				2794BD661A85C5F30058BA3C /* MainMenu.xib */,
 				2794BD601A85C5F30058BA3C /* Supporting Files */,
@@ -72,6 +110,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		270312BE1C70F2D500176941 /* EVEChatScraperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270312C61C70F2D500176941 /* Build configuration list for PBXNativeTarget "EVEChatScraperTests" */;
+			buildPhases = (
+				270312BB1C70F2D500176941 /* Sources */,
+				270312BC1C70F2D500176941 /* Frameworks */,
+				270312BD1C70F2D500176941 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				270312C51C70F2D500176941 /* PBXTargetDependency */,
+			);
+			name = EVEChatScraperTests;
+			productName = EVEChatScraperTests;
+			productReference = 270312BF1C70F2D500176941 /* EVEChatScraperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2794BD5C1A85C5F30058BA3C /* EVEChatScraper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVEChatScraper" */;
@@ -100,6 +156,10 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
+					270312BE1C70F2D500176941 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 2794BD5C1A85C5F30058BA3C;
+					};
 					2794BD5C1A85C5F30058BA3C = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -119,11 +179,19 @@
 			projectRoot = "";
 			targets = (
 				2794BD5C1A85C5F30058BA3C /* EVEChatScraper */,
+				270312BE1C70F2D500176941 /* EVEChatScraperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		270312BD1C70F2D500176941 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2794BD5B1A85C5F30058BA3C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,16 +204,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		270312BB1C70F2D500176941 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270312C21C70F2D500176941 /* EVEChatScraperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2794BD591A85C5F30058BA3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2794BD7E1A86C70E0058BA3C /* LogFile.swift in Sources */,
+				270312CA1C70F3C300176941 /* LogParser.swift in Sources */,
 				2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */,
+				270312BA1C70F28600176941 /* ParsedLogFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		270312C51C70F2D500176941 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2794BD5C1A85C5F30058BA3C /* EVEChatScraper */;
+			targetProxy = 270312C41C70F2D500176941 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2794BD661A85C5F30058BA3C /* MainMenu.xib */ = {
@@ -159,6 +245,39 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		270312C71C70F2D500176941 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = EVEChatScraperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.EVEChatScraperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVEChatScraper.app/Contents/MacOS/EVEChatScraper";
+			};
+			name = Debug;
+		};
+		270312C81C70F2D500176941 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = EVEChatScraperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = mmuszynski.EVEChatScraperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVEChatScraper.app/Contents/MacOS/EVEChatScraper";
+			};
+			name = Release;
+		};
 		2794BD751A85C5F30058BA3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -241,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -253,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -263,6 +384,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		270312C61C70F2D500176941 /* Build configuration list for PBXNativeTarget "EVEChatScraperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270312C71C70F2D500176941 /* Debug */,
+				270312C81C70F2D500176941 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVEChatScraper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
