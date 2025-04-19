@@ -7,224 +7,90 @@
 //
 
 import Cocoa
+import Combine
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate {
+extension FileAttributeKey {
+    static let eveOnlineChatChannelName = FileAttributeKey("eveOnlineChatChannelName")
+    static let path = FileAttributeKey("path")
+    static let url = FileAttributeKey("url")
+}
 
-    @IBOutlet weak var outlineView: NSOutlineView!
-    @IBOutlet weak var window: NSWindow!
-    var fullContents = ""
-    var currentLogFiles = [String: NSURL]()
-    var logFiles = [LogFile : Int]()
-    @IBOutlet var logView: NSTextView!
+@main
+@MainActor class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var controller = LogFileController()
     
     @IBOutlet weak var notificationButton: NSButton!
     @IBOutlet weak var soundPopUpButton: NSPopUpButton!
     func loadSoundNames() {
-        var soundNames = [String]()
+        var soundNames: [String]?
         
-        let url = NSURL(fileURLWithPath: "/System/Library/Sounds")
-        
-        if let soundFiles = (try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(url , includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles)) {
-            soundNames = soundFiles.map { $0.lastPathComponent! }
-            soundNames = soundNames.map { $0.stringByReplacingOccurrencesOfString(".aiff", withString: "") }
-        } else {
-            soundNames = []
+        let url = URL(fileURLWithPath: "/System/Library/Sounds")
+        if let soundFiles = try? FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .skipsHiddenFiles) {
+            soundNames = soundFiles.map(\.lastPathComponent)
+            soundNames = soundNames?.map { $0.replacingOccurrences(of: ".aiff", with: "") }
         }
         
         soundPopUpButton.removeAllItems()
-        soundPopUpButton.addItemsWithTitles(["None"] + soundNames)
+        soundPopUpButton.addItems(withTitles: ["None"] + (soundNames ?? []))
         
-        if let currentSound = NSUserDefaults.standardUserDefaults().valueForKey("alertSound") as? String {
-            soundPopUpButton.selectItemWithTitle(currentSound)
+        if let currentSound = UserDefaults.standard.string(forKey: "alertSound") {
+            soundPopUpButton.selectItem(withTitle: currentSound)
         }
-        
-        
     }
+    
     @IBAction func soundChanged(sender: AnyObject) {
         if let name = soundPopUpButton.titleOfSelectedItem {
             if name != "None" {
-                NSUserDefaults.standardUserDefaults().setValue(name, forKey: "alertSound")
+                UserDefaults.standard.set(name, forKey: "alertSound")
                 NSSound(named: name)?.play()
             } else {
-                NSUserDefaults.standardUserDefaults().removeObjectForKey("alertSound")
+                UserDefaults.standard.removeObject(forKey: "alertSound")
             }
         }
     }
     @IBAction func notificationButtonChecked(sender: AnyObject) {
         if let button = sender as? NSButton {
-            if button.state == NSOnState {
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "sendNotifications")
-            } else {
-                NSUserDefaults.standardUserDefaults().setBool(false, forKey: "sendNotifications")
-            }
+            UserDefaults.standard.set(button.state == .on, forKey: "sendNotifications")
         }
         
     }
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    private var cancellable : AnyCancellable?
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
         // Insert code here to initialize your application
         loadSoundNames()
-        if NSUserDefaults.standardUserDefaults().boolForKey("sendNotifications") {
-            notificationButton.state = NSOnState
-        } else {
-            notificationButton.state = NSOffState
-        }
+        notificationButton.state = UserDefaults.standard.bool(forKey: "sendNotifications") ? .on : .off
         
-        
-//        loadFiles()
-//        reloadLogObjects()
-//        outlineView.reloadData()
-        
-        let timer = NSTimer(timeInterval: 1.0, target: self, selector: "reloadLogObjects", userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-    }
 
+    }
+    
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
-
-    func applicationSupportDirectory() -> NSURL? {
-        return try? NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.ApplicationSupportDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: false)
+    
+    func applicationSupportDirectory() -> URL? {
+        try? FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
     }
     
-    func reloadLogObjects() {
-        for log in Array(logFiles.keys) {
-            log.reloadData()
-            if logFiles[log] != log.lines.count {
-                reloadOutlineViewRowForLog(log)
-            }
-        }
-        
-        if outlineView.selectedRow != -1 {
-            if let item = outlineView.itemAtRow(outlineView.selectedRow) as? LogFile {
-                if item.lines.count != logFiles[item] {
-                    loadLogFileIntoDetailView(item)
-                }
-            }
-        }
-    }
     
-    func loadFiles() {
-        if let url = applicationSupportDirectory()?.URLByAppendingPathComponent("/EVE Online/p_drive/User/My Documents/EVE/logs/Chatlogs") {
-            var fileProperties = [[NSObject : AnyObject]]()
-            
-            let dateFormat = NSDateFormatter()
-            dateFormat.timeZone = NSTimeZone(abbreviation: "GMT")
-            dateFormat.dateFormat = "YYYYMMdd"
-            let todayString = dateFormat.stringFromDate(NSDate())
-
-            if let files = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles) {
-                let todaysFiles = files.filter {
-                    let url = $0 
-                    
-                    let path = url.absoluteString
-                    let pathString = NSString(string: path)
-                    return pathString.containsString(todayString)
-                }
-                
-                for location in todaysFiles {
-                    let url = location
-                    if let path = url.path {
-                        if var properties = try? NSFileManager.defaultManager().attributesOfItemAtPath(path) {
-                            if let filename = url.lastPathComponent {
-                                if let logType = filename.componentsSeparatedByString("_").first {
-                                    properties["LogType"] = logType
-                                    properties["path"] = path
-                                }
-                            }
-                            fileProperties.append(properties)
-                        }
-                    }
-                }
-                
-                
-                fileProperties.sortInPlace {
-                    let date1 = $0[NSFileModificationDate] as! NSDate
-                    let date2 = $1[NSFileModificationDate] as! NSDate
-                    return date1.earlierDate(date2) == date1
-                }
-                
-                for properties in fileProperties {
-                    let type = properties["LogType"] as! String
-                    let path = properties["path"] as! String
-                    
-                    currentLogFiles[type] = NSURL(fileURLWithPath: path)
-                    
-                }
-                
-                for (name, url) in currentLogFiles {
-                    let file = LogFile(url: url, logName: name)
-                    logFiles[file] = 0
-                    file.reloadData()
-                }
-                
-            }
-
-        }
-    }
-    
-    func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-        if item == nil {
-            return logFiles.count
-        }
-        
-        return 0
-    }
-    
-    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-        return Array(logFiles.keys)[index]
-    }
-    
-    func outlineView(outlineView: NSOutlineView, objectValueForTableColumn tableColumn: NSTableColumn?, byItem item: AnyObject?) -> AnyObject? {
-        if let log = item as? LogFile {
-            return log
-        }
-        
-        return nil
-    }
-    
-    func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
-        if let log = item as? LogFile {
-            let cell = outlineView.makeViewWithIdentifier("DataCell", owner: self) as! LogFileCellView
-            cell.textField?.stringValue = log.logName
-            if let readLines = logFiles[log] {
-                cell.unreadLines = log.lines.count - readLines
-            }
-            return cell
-        }
-        return nil
-    }
-    
-    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        return false
-    }
-    
-    func outlineViewSelectionDidChange(notification: NSNotification) {
-        let item = outlineView.selectedRowIndexes.firstIndex
-        let selectedItem = outlineView.itemAtRow(item) as! LogFile
-        loadLogFileIntoDetailView(selectedItem)
-    }
-    
-    func loadLogFileIntoDetailView(log: LogFile) {
-        let logText = log.lines.joinWithSeparator("\n")
-        logView.string = logText
-        logFiles[log] = log.lines.count
-        reloadOutlineViewRowForLog(log)
-        logView.scrollToEndOfDocument(self)
-    }
-    
-    func reloadOutlineViewRowForLog(log: LogFile) {
-        let rows = NSIndexSet(index: outlineView.rowForItem(log))
-        outlineView.reloadDataForRowIndexes(rows, columnIndexes: NSIndexSet(index: 0))
-    }
     
     @IBAction func rescanButtonPressed(sender: AnyObject) {
-        logFiles.removeAll()
-        loadFiles()
-        reloadLogObjects()
-        outlineView.reloadData()
+        controller.logFiles.removeAll()
+        try! controller.loadFiles()
     }
-
+    
+    @IBOutlet weak var segmentedControl: NSSegmentedControl!
+    @IBAction func segmentedControlValueChanged(_ sender: AnyObject) {
+        switch segmentedControl.selectedSegment {
+        case 0:
+            controller.displayType = .today
+        case 1:
+            controller.displayType = .older
+        default:
+            controller.displayType = .all
+        }
+    }
 }
 

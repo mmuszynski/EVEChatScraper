@@ -7,19 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272FC24E2DA82378004118C4 /* FolderMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FC24D2DA82378004118C4 /* FolderMonitor.swift */; };
+		275314452DAFDBCF00207304 /* ReadReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275314442DAFDBCF00207304 /* ReadReceipt.swift */; };
+		27675F3F2DB19A8000508207 /* LogFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F3E2DB19A8000508207 /* LogFileController.swift */; };
+		27675F412DB19AA000508207 /* ChatChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F402DB19AA000508207 /* ChatChannel.swift */; };
+		27675F452DB2D6FF00508207 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F442DB2D6FF00508207 /* LogFile.swift */; };
+		27675F482DB2D9BE00508207 /* ActiveChatOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F472DB2D9BE00508207 /* ActiveChatOutlineViewController.swift */; };
 		2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD621A85C5F30058BA3C /* AppDelegate.swift */; };
 		2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD641A85C5F30058BA3C /* Images.xcassets */; };
 		2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD661A85C5F30058BA3C /* MainMenu.xib */; };
-		2794BD7E1A86C70E0058BA3C /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD7D1A86C70E0058BA3C /* LogFile.swift */; };
+		2794BD7E1A86C70E0058BA3C /* LogFileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD7D1A86C70E0058BA3C /* LogFileMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		272FC24D2DA82378004118C4 /* FolderMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderMonitor.swift; sourceTree = "<group>"; };
+		275314442DAFDBCF00207304 /* ReadReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadReceipt.swift; sourceTree = "<group>"; };
+		27675F3E2DB19A8000508207 /* LogFileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFileController.swift; sourceTree = "<group>"; };
+		27675F402DB19AA000508207 /* ChatChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatChannel.swift; sourceTree = "<group>"; };
+		27675F442DB2D6FF00508207 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
+		27675F472DB2D9BE00508207 /* ActiveChatOutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatOutlineViewController.swift; sourceTree = "<group>"; };
 		2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVEChatScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2794BD611A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2794BD621A85C5F30058BA3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2794BD641A85C5F30058BA3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2794BD671A85C5F30058BA3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2794BD7D1A86C70E0058BA3C /* LogFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
+		2794BD7D1A86C70E0058BA3C /* LogFileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27675F462DB2D70A00508207 /* Log Files */ = {
+			isa = PBXGroup;
+			children = (
+				27675F442DB2D6FF00508207 /* LogFile.swift */,
+				27675F402DB19AA000508207 /* ChatChannel.swift */,
+				275314442DAFDBCF00207304 /* ReadReceipt.swift */,
+			);
+			path = "Log Files";
+			sourceTree = "<group>";
+		};
 		2794BD541A85C5F30058BA3C = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +75,11 @@
 			isa = PBXGroup;
 			children = (
 				2794BD621A85C5F30058BA3C /* AppDelegate.swift */,
-				2794BD7D1A86C70E0058BA3C /* LogFile.swift */,
+				27675F472DB2D9BE00508207 /* ActiveChatOutlineViewController.swift */,
+				272FC24D2DA82378004118C4 /* FolderMonitor.swift */,
+				2794BD7D1A86C70E0058BA3C /* LogFileMonitor.swift */,
+				27675F3E2DB19A8000508207 /* LogFileController.swift */,
+				27675F462DB2D70A00508207 /* Log Files */,
 				2794BD641A85C5F30058BA3C /* Images.xcassets */,
 				2794BD661A85C5F30058BA3C /* MainMenu.xib */,
 				2794BD601A85C5F30058BA3C /* Supporting Files */,
@@ -97,7 +123,7 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
 					2794BD5C1A85C5F30058BA3C = {
@@ -110,6 +136,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -140,7 +167,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2794BD7E1A86C70E0058BA3C /* LogFile.swift in Sources */,
+				27675F452DB2D6FF00508207 /* LogFile.swift in Sources */,
+				275314452DAFDBCF00207304 /* ReadReceipt.swift in Sources */,
+				27675F412DB19AA000508207 /* ChatChannel.swift in Sources */,
+				27675F482DB2D9BE00508207 /* ActiveChatOutlineViewController.swift in Sources */,
+				272FC24E2DA82378004118C4 /* FolderMonitor.swift in Sources */,
+				2794BD7E1A86C70E0058BA3C /* LogFileMonitor.swift in Sources */,
+				27675F3F2DB19A8000508207 /* LogFileController.swift in Sources */,
 				2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,15 +205,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -198,6 +235,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -214,8 +252,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -224,6 +264,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -233,6 +274,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -243,7 +286,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmuszynski.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = EVEChatScraper;
 			};
 			name = Debug;
@@ -255,7 +299,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmuszynski.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = EVEChatScraper;
 			};
 			name = Release;
