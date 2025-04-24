@@ -80,6 +80,10 @@ class LogFileController {
             try registerFile(at: fileURL)
         }
         
+        for channel in chatChannels {
+            try channel.loadLatestFile()
+        }
+        
         NotificationCenter.default.post(name: .refreshOutlineView, object: nil)
     }
 }

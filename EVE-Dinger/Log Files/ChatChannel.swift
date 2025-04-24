@@ -7,12 +7,28 @@
 //
 
 import Foundation
+import RegexBuilder
 
 class ChatChannel {
     var name: String = "Unknown"
     var files: Array<LogFile> = []
     
     var monitor: LogFileMonitor?
+    
+    var lines: [ChatLine] = []
+    var loadedFileRange: Range<Array<LogFile>.Index>?
+    
+    func loadFiles(in range: Range<Array<LogFile>.Index>) throws {
+        for file in files[range] {
+            let strings = try String(contentsOf: file.url).components(separatedBy: .newlines)
+            let lines = strings.compactMap(ChatLine.init)
+            self.lines.append(contentsOf: lines)
+        }
+    }
+    
+    func loadLatestFile() throws {
+        try self.loadFiles(in: 0..<1)
+    }
 }
 
 extension ChatChannel: Hashable, Equatable {

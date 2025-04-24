@@ -16,10 +16,6 @@ struct LogFile: Equatable, Hashable {
     var lastLine: String { "" }
     var hasUpdates: Bool = false
     
-    func loadLines() {
-        
-    }
-    
     mutating func updateModificationDate() {
         self.modificationDate = self.url.getMetadata()?["kMDItemContentModificationDate"] as? Date ?? .distantPast
     }

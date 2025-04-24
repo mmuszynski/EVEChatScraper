@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,25 @@
 		27675F412DB19AA000508207 /* ChatChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F402DB19AA000508207 /* ChatChannel.swift */; };
 		27675F452DB2D6FF00508207 /* LogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F442DB2D6FF00508207 /* LogFile.swift */; };
 		27675F482DB2D9BE00508207 /* ActiveChatOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F472DB2D9BE00508207 /* ActiveChatOutlineViewController.swift */; };
+		27675F572DB6BF4F00508207 /* ChatLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F562DB6BF4F00508207 /* ChatLine.swift */; };
+		27675F592DB6C08E00508207 /* ChatLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F582DB6C08A00508207 /* ChatLineView.swift */; };
+		27675F5B2DB80CEB00508207 /* ChatLineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27675F5A2DB80CEB00508207 /* ChatLineListView.swift */; };
+		27675F5D2DB80D1D00508207 /* Local_20250416_153307_92922517.txt in Resources */ = {isa = PBXBuildFile; fileRef = 27675F5C2DB80D1D00508207 /* Local_20250416_153307_92922517.txt */; };
 		2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD621A85C5F30058BA3C /* AppDelegate.swift */; };
 		2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD641A85C5F30058BA3C /* Images.xcassets */; };
 		2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2794BD661A85C5F30058BA3C /* MainMenu.xib */; };
 		2794BD7E1A86C70E0058BA3C /* LogFileMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794BD7D1A86C70E0058BA3C /* LogFileMonitor.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27675F512DB6A3A000508207 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2794BD551A85C5F30058BA3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2794BD5C1A85C5F30058BA3C;
+			remoteInfo = EVEChatScraper;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		272FC24D2DA82378004118C4 /* FolderMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderMonitor.swift; sourceTree = "<group>"; };
@@ -26,6 +40,11 @@
 		27675F402DB19AA000508207 /* ChatChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatChannel.swift; sourceTree = "<group>"; };
 		27675F442DB2D6FF00508207 /* LogFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFile.swift; sourceTree = "<group>"; };
 		27675F472DB2D9BE00508207 /* ActiveChatOutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatOutlineViewController.swift; sourceTree = "<group>"; };
+		27675F4D2DB6A3A000508207 /* EVEChatScraperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVEChatScraperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27675F562DB6BF4F00508207 /* ChatLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLine.swift; sourceTree = "<group>"; };
+		27675F582DB6C08A00508207 /* ChatLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLineView.swift; sourceTree = "<group>"; };
+		27675F5A2DB80CEB00508207 /* ChatLineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLineListView.swift; sourceTree = "<group>"; };
+		27675F5C2DB80D1D00508207 /* Local_20250416_153307_92922517.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Local_20250416_153307_92922517.txt; sourceTree = "<group>"; };
 		2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVEChatScraper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2794BD611A85C5F30058BA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2794BD621A85C5F30058BA3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +53,18 @@
 		2794BD7D1A86C70E0058BA3C /* LogFileMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFileMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		27675F4E2DB6A3A000508207 /* EVEChatScraperTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EVEChatScraperTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		27675F4A2DB6A3A000508207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2794BD5A1A85C5F30058BA3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,6 +80,9 @@
 			children = (
 				27675F442DB2D6FF00508207 /* LogFile.swift */,
 				27675F402DB19AA000508207 /* ChatChannel.swift */,
+				27675F562DB6BF4F00508207 /* ChatLine.swift */,
+				27675F582DB6C08A00508207 /* ChatLineView.swift */,
+				27675F5A2DB80CEB00508207 /* ChatLineListView.swift */,
 				275314442DAFDBCF00207304 /* ReadReceipt.swift */,
 			);
 			path = "Log Files";
@@ -59,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2794BD5F1A85C5F30058BA3C /* EVE-Dinger */,
+				27675F4E2DB6A3A000508207 /* EVEChatScraperTests */,
 				2794BD5E1A85C5F30058BA3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				2794BD5D1A85C5F30058BA3C /* EVEChatScraper.app */,
+				27675F4D2DB6A3A000508207 /* EVEChatScraperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +109,7 @@
 		2794BD5F1A85C5F30058BA3C /* EVE-Dinger */ = {
 			isa = PBXGroup;
 			children = (
+				27675F5C2DB80D1D00508207 /* Local_20250416_153307_92922517.txt */,
 				2794BD621A85C5F30058BA3C /* AppDelegate.swift */,
 				27675F472DB2D9BE00508207 /* ActiveChatOutlineViewController.swift */,
 				272FC24D2DA82378004118C4 /* FolderMonitor.swift */,
@@ -98,6 +134,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		27675F4C2DB6A3A000508207 /* EVEChatScraperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27675F532DB6A3A000508207 /* Build configuration list for PBXNativeTarget "EVEChatScraperTests" */;
+			buildPhases = (
+				27675F492DB6A3A000508207 /* Sources */,
+				27675F4A2DB6A3A000508207 /* Frameworks */,
+				27675F4B2DB6A3A000508207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27675F522DB6A3A000508207 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				27675F4E2DB6A3A000508207 /* EVEChatScraperTests */,
+			);
+			name = EVEChatScraperTests;
+			packageProductDependencies = (
+			);
+			productName = EVEChatScraperTests;
+			productReference = 27675F4D2DB6A3A000508207 /* EVEChatScraperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2794BD5C1A85C5F30058BA3C /* EVEChatScraper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2794BD771A85C5F30058BA3C /* Build configuration list for PBXNativeTarget "EVEChatScraper" */;
@@ -122,10 +181,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0720;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mike Muszynski";
 				TargetAttributes = {
+					27675F4C2DB6A3A000508207 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2794BD5C1A85C5F30058BA3C;
+					};
 					2794BD5C1A85C5F30058BA3C = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -146,16 +209,25 @@
 			projectRoot = "";
 			targets = (
 				2794BD5C1A85C5F30058BA3C /* EVEChatScraper */,
+				27675F4C2DB6A3A000508207 /* EVEChatScraperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		27675F4B2DB6A3A000508207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2794BD5B1A85C5F30058BA3C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2794BD651A85C5F30058BA3C /* Images.xcassets in Resources */,
+				27675F5D2DB80D1D00508207 /* Local_20250416_153307_92922517.txt in Resources */,
 				2794BD681A85C5F30058BA3C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,22 +235,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		27675F492DB6A3A000508207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2794BD591A85C5F30058BA3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				27675F452DB2D6FF00508207 /* LogFile.swift in Sources */,
+				27675F5B2DB80CEB00508207 /* ChatLineListView.swift in Sources */,
 				275314452DAFDBCF00207304 /* ReadReceipt.swift in Sources */,
+				27675F592DB6C08E00508207 /* ChatLineView.swift in Sources */,
 				27675F412DB19AA000508207 /* ChatChannel.swift in Sources */,
 				27675F482DB2D9BE00508207 /* ActiveChatOutlineViewController.swift in Sources */,
 				272FC24E2DA82378004118C4 /* FolderMonitor.swift in Sources */,
 				2794BD7E1A86C70E0058BA3C /* LogFileMonitor.swift in Sources */,
+				27675F572DB6BF4F00508207 /* ChatLine.swift in Sources */,
 				27675F3F2DB19A8000508207 /* LogFileController.swift in Sources */,
 				2794BD631A85C5F30058BA3C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27675F522DB6A3A000508207 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2794BD5C1A85C5F30058BA3C /* EVEChatScraper */;
+			targetProxy = 27675F512DB6A3A000508207 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2794BD661A85C5F30058BA3C /* MainMenu.xib */ = {
@@ -192,6 +282,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		27675F542DB6A3A000508207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.EVEChatScraperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVEChatScraper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EVEChatScraper";
+			};
+			name = Debug;
+		};
+		27675F552DB6A3A000508207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DF288G8ZJ6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuszynski.EVEChatScraperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVEChatScraper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EVEChatScraper";
+			};
+			name = Release;
+		};
 		2794BD751A85C5F30058BA3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -274,7 +444,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
@@ -285,8 +456,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "mmuszynski.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = EVEChatScraper;
 			};
@@ -298,8 +472,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "EVE-Dinger/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "mmuszynski.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = EVEChatScraper;
 			};
@@ -308,6 +485,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		27675F532DB6A3A000508207 /* Build configuration list for PBXNativeTarget "EVEChatScraperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27675F542DB6A3A000508207 /* Debug */,
+				27675F552DB6A3A000508207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2794BD581A85C5F30058BA3C /* Build configuration list for PBXProject "EVEChatScraper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

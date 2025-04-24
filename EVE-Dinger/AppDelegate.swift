@@ -18,7 +18,7 @@ extension FileAttributeKey {
 @main
 @MainActor class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var controller = LogFileController()
+    var controller = LogFileController.shared
     
     @IBOutlet weak var notificationButton: NSButton!
     @IBOutlet weak var soundPopUpButton: NSPopUpButton!
@@ -77,8 +77,11 @@ extension FileAttributeKey {
     
     
     @IBAction func rescanButtonPressed(sender: AnyObject) {
-        controller.logFiles.removeAll()
-        try! controller.loadFiles()
+        do {
+            try controller.loadFiles()
+        } catch {
+            print("Controller could not load files with \(error)")
+        }
     }
     
     @IBOutlet weak var segmentedControl: NSSegmentedControl!

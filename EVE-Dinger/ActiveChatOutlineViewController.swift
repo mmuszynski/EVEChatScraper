@@ -27,13 +27,6 @@ class ActiveChatOutlineViewController: NSViewController {
     override func awakeFromNib() {
         Task {
             await MainActor.run {
-                do {
-                    try controller.loadFiles()
-                    outlineView.reloadData()
-                } catch {
-                    fatalError("\(error)")
-                }
-                
                 cancellable = NotificationCenter.default
                     .publisher(for: .logUpdated)
                     .receive(on: DispatchQueue.main)
@@ -42,6 +35,11 @@ class ActiveChatOutlineViewController: NSViewController {
                     }
             }
         }
+    }
+    
+    func loadFiles() throws {
+        try controller.loadFiles()
+        outlineView.reloadData()
     }
     
     func playSound() {
